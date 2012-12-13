@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery-multiActionForm Sample Page</title>
+        <style>
+            form {
+                border: solid 1px black;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <hgroup>
+                <h1>jQuery-multiActionForm Sample Page</h1>
+            </hgroup>
+        </header>
+        <section>
+            <article>
+                <form data-multiactionform>
+                    <section>
+                        <button type="submit" data-submitaction="/SampleActionOne" name="SubmitOne" value="SubmitOne">Submit One</button>
+                        <button type="submit" data-submitaction="/SampleActionTwo" name="SubmitTwo" value="SubmitTwo">Submit Two</button>
+                        <input type="submit" data-submitaction="/SampleActionThree" name="SubmitThree" value="SubmitThree">Submit Three</input>
+                        <input type="submit" data-submitaction="/SampleActionFour" name="SubmitFour" value="SubmitFour">Submit Four</input>
+                    </section>
+                </form>
+            </article>
+        </section>
+
+        <!-- Add multiActionForm plugin references -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="../jquery.multiactionform.js"></script>
+    </body>
+</html>
