@@ -10,7 +10,7 @@
 
     //###############################################################################
 
-    var defaultSettings = {};
+    var defaultSettings = { allowDefault: true };
 
     $.fn.multiActionForm = function (settingArgs) {
         //Initialize plugin settings.
@@ -22,7 +22,7 @@
 
         //Iterate over each form in the selected element collection.
         return this.each(function () {
-            var $formElement = $(this),                        //Wrap form element with jQuery Object.
+            var $formElement = $(this),
                 $submitElements = $("[type='submit']", $formElement);
 
             if ($submitElements && $submitElements.length > 0) {
@@ -44,7 +44,11 @@
                         }
                     }
 
-                    //Unknown button clicked, prevent default.
+                    //Proceed to post if settings allow default action on the form element itself.
+                    if (settings.allowDefault) {
+                        return true;
+                    }
+                    
                     return false;
                 });
             }
